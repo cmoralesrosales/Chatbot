@@ -18,8 +18,8 @@ import tempfile
     #OPENAI_API_KEY = config.get("OPENAI_API_KEY")
     #OPENAI_API_BASE = config.get("OPENAI_API_BASE")
 
-OPENAI_API_KEY = os.environ.get("API_KEY")
-OPENAI_API_BASE = os.environ.get("API_BASE")
+OPENAI_API_KEY = "gl-U2FsdGVkX1+VGGING0thawgPCtftUEPRBlaUbtzrbMcIKC5kafRqejGb573rXS1+"
+OPENAI_API_BASE = "https://aibe.mygreatlearning.com/openai/v1"
 
 ## Initialize OpenAI client
 client = OpenAI(
