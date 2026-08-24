@@ -12,14 +12,15 @@ from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 import tempfile
 
-#file_name = 'config.json'
-#with open(file_name, 'r') as file:
-    #config = json.load(file)
-    #OPENAI_API_KEY = config.get("OPENAI_API_KEY")
-    #OPENAI_API_BASE = config.get("OPENAI_API_BASE")
+file_name = 'config.json'
+with open(file_name, 'r') as file:
+    config = json.load(file)
+    OPENAI_API_KEY = config.get("OPENAI_API_KEY")
+    OPENAI_API_BASE = config.get("OPENAI_API_BASE")
 
-OPENAI_API_KEY = "gl-U2FsdGVkX1+VGGING0thawgPCtftUEPRBlaUbtzrbMcIKC5kafRqejGb573rXS1+"
-OPENAI_API_BASE = "https://aibe.mygreatlearning.com/openai/v1"
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+os.environ["OPENAI_BASE_URL"] = OPENAI_API_BASE
+
 
 ## Initialize OpenAI client
 client = OpenAI(
