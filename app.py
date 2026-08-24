@@ -12,12 +12,12 @@ from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 import tempfile
 
-file_name = 'config.json'                   
-with open(file_name, 'r') as file:                                              
-    config = json.load(file)                                                    
-    OPENAI_API_KEY = config.get("OPENAI_API_KEY")                                             
-    OPENAI_API_BASE = config.get("OPENAI_API_BASE")
-    
+#file_name = 'config.json'
+#with open(file_name, 'r') as file:
+    #config = json.load(file)
+    #OPENAI_API_KEY = config.get("OPENAI_API_KEY")
+    #OPENAI_API_BASE = config.get("OPENAI_API_BASE")
+
 OPENAI_API_KEY = os.environ.get("API_KEY")
 OPENAI_API_BASE = os.environ.get("API_BASE")
 
@@ -29,7 +29,7 @@ client = OpenAI(
 
 ## Define the system prompt for the model
 qna_system_message = """
-You are an AI assistant designed to support research teams in efficiently reviewing scientific literature. 
+You are an AI assistant designed to support research teams in efficiently reviewing scientific literature.
 Your task is to provide evidence-based, concise, and relevant summaries based on the context provided from research papers.
 
 User input will include the necessary context for you to answer their questions. This context will begin with the token:
